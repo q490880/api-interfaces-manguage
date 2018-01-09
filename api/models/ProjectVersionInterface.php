@@ -40,10 +40,10 @@ class ProjectVersionInterface extends ApiActiveRecord
     public function rules()
     {
         return [
-            [['page_id', 'interface_name', 'interface_url', 'interface_desc','status'], 'required'],
+            [['page_id', 'interface_name', 'interface_url','status'], 'required'],
             [['page_id','create_user_id','project_id','status'], 'integer'],
             [['param', 'result','create_at','update_at','create_user_name'], 'string'],
-            [['interface_name', 'interface_url'], 'string', 'max' => 255],
+            [['interface_name', 'interface_url','interface_desc'], 'string', 'max' => 255],
             [['method'], 'string', 'max' => 10],
         ];
     }

@@ -9,27 +9,36 @@ $this->registerJs("
 ?>
 <div class="site-index">
     <?if(isset($interfaceList['page'])):?>
-    <table class="table table-striped table-bordered detail-view">
-        <tr>
-            <td class="child_title">按页面名称检索</td>
-        </tr>
-        <tr>
-            <td>
-
-                <table class="table table-striped table-bordered detail-view">
-                    <tr>
-                        <?foreach($interfaceList['page'] as $k=>$page):?>
-                            <td class="interface_td"><?=\yii\helpers\Html::a($page['page_name'],"#{$page['page_id']}")?></td>
-                            <?$k++;
-                            if($k % 6 == 0){
-                                echo '</tr><tr>';
-                            }
-                        endforeach?>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
+<!--    <table class="table table-striped table-bordered detail-view">-->
+<!--        <tr>-->
+<!--            <td class="child_title">按页面名称检索</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>-->
+<!--                <table class="table table-striped table-bordered detail-view">-->
+<!--                    <tr>-->
+<!--                        --><?//foreach($interfaceList['page'] as $k=>$page):?>
+<!--                            <td class="interface_td">--><?//=\yii\helpers\Html::a($page['page_name'],"#{$page['page_id']}")?><!--</td>-->
+<!--                            --><?//$k++;
+//                            if($k % 6 == 0){
+//                                echo '</tr><tr>';
+//                            }
+//                        endforeach?>
+<!--                    </tr>-->
+<!--                </table>-->
+<!--            </td>-->
+<!--        </tr>-->
+<!--    </table>-->
+        <table class="table table-striped table-bordered detail-view">
+            <tr>
+                <td class="child_title">版本信息</td>
+            </tr>
+            <tr>
+                <td>
+                    <?=$interfaceList['version_desc']?>
+                </td>
+            </tr>
+        </table>
     <?foreach($interfaceList['page'] as $page):?>
         <table class="table table-striped table-bordered detail-view">
             <tr>
@@ -37,10 +46,10 @@ $this->registerJs("
             </tr>
             <tr>
                 <td>
-                    <table class="table table-striped table-bordered detail-view">
+                    <table class="table-striped table-bordered detail-view interface-list">
                         <tr>
                             <?foreach($page['interface'] as $k=>$interface):?>
-                                <td class="interface_td"><?=\yii\helpers\Html::a($interface['interface_name'],'javascript:',['class'=>'interface_x','id'=>$interface['interface_id']])?></td>
+                                <td><?=\yii\helpers\Html::a($interface['interface_name'],'javascript:',['class'=>'interface_x','id'=>$interface['interface_id']])?></td>
                                 <?$k++;
                                 if($k % 6 == 0){
                                     echo '</tr><tr>';

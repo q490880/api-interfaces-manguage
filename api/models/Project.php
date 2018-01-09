@@ -90,7 +90,7 @@ class Project extends ApiActiveRecord
             return [];
         }
         foreach($projectModel as $k=>$project){
-            $projectModel[$k]['version'] = ProjectVersion::find()->where(['project_id'=>$project['project_id']])->select('version_id,version,version_desc,create_at')->asArray()->all();
+            $projectModel[$k]['version'] = ProjectVersion::find()->where(['project_id'=>$project['project_id']])->select('version_id,version,create_at')->asArray()->all();
         }
         return $projectModel;
     }

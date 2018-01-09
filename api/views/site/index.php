@@ -26,10 +26,6 @@ $this->registerJs("
                         <td class="interface_td">创建时间:</td>
                         <td><?=$version['create_at']?></td>
                     </tr>
-                    <tr>
-                        <td class="interface_td">版本说明:</td>
-                        <td><?=$version['version_desc']?></td>
-                    </tr>
                 </table>
                 <?endforeach?>
             </td>

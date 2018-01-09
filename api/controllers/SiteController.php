@@ -22,6 +22,7 @@ class SiteController extends ApiController
         $this->loginActions = ['index','interface','logout','interface-view'];
         return parent::init();
     }
+
     /*
      * 首页
      * */
@@ -38,6 +39,7 @@ class SiteController extends ApiController
             ]);
         }
     }
+
     /*
      * 接口列表页
      * */
@@ -70,6 +72,7 @@ class SiteController extends ApiController
             'model' => $model,
         ]);
     }
+
     //注册
     public function actionSignup(){
         $model = new SignupForm();
@@ -81,6 +84,7 @@ class SiteController extends ApiController
             'model' => $model,
         ]);
     }
+
     /**
      * @param $id
      * @return string
