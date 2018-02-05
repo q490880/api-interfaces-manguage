@@ -149,6 +149,7 @@ use yii\bootstrap\ActiveForm;
             url:url,
             type:method,
             data:post_data,
+            crossDomain:true,
             success:function(data){
                 layer.msg('请求成功', {icon: 1});
                 data = JSON.stringify(data)

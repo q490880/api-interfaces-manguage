@@ -50,7 +50,6 @@ class User extends ApiActiveRecord implements IdentityInterface
             'id' => 'ID',
             'username' => '用户名',
             'password' => '密码',
-
             'status' => '状态',
             'create_at' => '创建时间',
             'update_at' => '更新时间',
